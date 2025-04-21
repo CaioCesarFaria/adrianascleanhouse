@@ -331,7 +331,7 @@
     padding: 2rem 2rem 1rem 2rem;
   }
   .bayarea_img {
-    width: 80vw;
+    width: 60vw;
     align-self: center;
   }
   .bayarea-txt{
@@ -1327,7 +1327,8 @@
       padding: 2rem 2rem 1rem 2rem;
     }
     .bayarea_img {
-      width: 30vw;
+      width: 25vw;
+
       align-self: center;
     }
     .bayarea-txt{
