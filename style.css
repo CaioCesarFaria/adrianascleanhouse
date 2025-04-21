@@ -7,6 +7,8 @@
   --preto-principal: #222222;
   --amarelo-principal: #FFD738;
   --bege-princiapl: #E9DFD7;
+  --azul-ceu: #81BFE7;
+  --azul-escuro: #2D4967;
 }
 
 * {
@@ -289,6 +291,115 @@
     text-align: center;
     padding: 1rem;
   }
+
+  /* ! CONTAINER ANTES DEPOIS ======================================================== */
+  .container-antesdepois {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+    background-image: url('./assets/bg_antesdepois.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+  }
+  .container-antesdepois img{
+    width: 35vw;
+    padding: 2rem 0;
+  }
+
+  /* ! CONTAINER BAY AREA */
+  .container-bayarea {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    background-color: var(--azul-ceu);
+    font-family: var(--fonte-primaria);
+  }
+  .bayarea-title {
+    color: var(--azul-escuro);
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    padding: 2rem 2rem 1rem 2rem;
+  }
+  .bayarea_img {
+    width: 80vw;
+    align-self: center;
+  }
+  .bayarea-txt{
+    font-family: var(--fonte-primaria);
+    color: var(--preto-principal);
+    font-size: 18px;
+    padding: 1rem 2rem 0rem 2rem;
+    text-align: center;
+  }
+  .bayarea-bg {
+    margin-top: -4rem;
+  }
+
+  /* ! CONTAINER DEPOIMENTOS ================================================================== */
+  .container-depoimentos {
+    margin-top: 2rem;
+    background-color: #f0dcd0;
+    padding: 3rem 1rem 0;
+    text-align: center;
+    font-family: var(--fonte-primaria);
+    position: relative;
+  }
+  
+  .depoimentos-titulo {
+    color: #a06b2b;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  
+  .depoimento {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 16px;
+    text-align: left;
+    margin-bottom: 2rem;
+    display: flex;
+    
+    align-items: flex-start;
+    gap: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .foto-cliente {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .depoimento-texto h3 {
+    font-size: 16px;
+    color: var(--preto-principal);
+    margin: 0;
+  }
+  
+  .depoimento-texto span {
+    font-size: 13px;
+    color: #8c6b40;
+    font-weight: 500;
+  }
+  
+  .depoimento-texto p {
+    font-size: 14px;
+    color: var(--cinza-texto);
+    margin-top: 0.5rem;
+    line-height: 1.4;
+  }
+  
+  .sofa-fundo {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
 }
 
 
