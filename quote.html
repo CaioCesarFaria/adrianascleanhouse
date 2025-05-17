@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Request a Quote</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+      .form-container {
+        padding: 3rem 1rem;
+        max-width: 800px;
+        margin: 0 auto;
+        font-family: "DM Sans", sans-serif;
+      }
+
+      .form-container h1 {
+        text-align: center;
+        color: var(--rosa-primario);
+        margin-bottom: 1rem;
+      }
+
+      .form-container form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .form-container form input,
+      .form-container form select,
+      .form-container form textarea {
+        padding: 0.8rem;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+        width: 100%;
+      }
+
+      .form-container form textarea {
+        grid-column: span 2;
+        min-height: 100px;
+      }
+
+      .form-container form button {
+        grid-column: span 2;
+        background-color: var(--rosa-primario);
+        color: white;
+        padding: 1rem;
+        border: none;
+        border-radius: 30px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .form-container form button:hover {
+        background-color: #c8385c;
+      }
+
+      @media (max-width: 600px) {
+        .form-container form {
+          grid-template-columns: 1fr;
+        }
+
+        .form-container form textarea,
+        .form-container form button {
+          grid-column: span 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ! HEADER -->
+    <header class="top-header">
+      <div class="container-header">
+        <div class="header-item">
+          <img src="assets/icon_instagra.svg" alt="Instagram" />
+          <a href="https://www.instagram.com/adrianadasilva.cleaning" target="_blank">@adrianadasilva.cleaning</a>
+        </div>
+        <div class="header-item">
+          <img src="assets/icon_email.svg" alt="Email" />
+          <a href="mailto:housecleaning44@hotmail.com">housecleaning44@hotmail.com</a>
+        </div>
+        <div class="header-item">
+          <img src="assets/icon_phone.svg" alt="Phone" />
+          <a href="tel:+14159872502">(415) 987-2502</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ! FORMULÁRIO -->
+    <section class="form-container">
+      <h1>Request a Quote</h1>
+      <form action="https://formsubmit.co/housecleaning44@hotmail.com" method="POST">
+        <input type="text" name="First Name" placeholder="First Name" required />
+        <input type="text" name="Last Name" placeholder="Last Name" required />
+        <input type="email" name="Email" placeholder="Email" required />
+        <input type="tel" name="Phone" placeholder="Phone Number" required />
+        <select name="Type of Cleaning" required>
+          <option value="">Type of Cleaning</option>
+          <option value="Residential">Residential</option>
+          <option value="Commercial">Commercial</option>
+          <option value="Move In/Out">Move In/Move Out</option>
+          <option value="Post Construction">Post-Construction</option>
+          <option value="Other">Other</option>
+        </select>
+        <input type="text" name="Square Footage" placeholder="Total Square Footage" />
+        <input type="text" name="Bedrooms" placeholder="# of Bedrooms" />
+        <input type="text" name="Bathrooms" placeholder="# of Bathrooms" />
+        <textarea name="Message" placeholder="Leave a message..."></textarea>
+
+        <!-- Proteção extra -->
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://adrianadasilvahousecleaning.com/thank-you.html" />
+
+        <button type="submit">Send Request</button>
+      </form>
+    </section>
+  </body>
+</html>
