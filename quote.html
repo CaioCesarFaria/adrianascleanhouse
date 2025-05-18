@@ -26,6 +26,12 @@
         gap: 3rem;
       }
 
+      .form-container label {
+        display: block;
+        margin-bottom: 0.3rem;
+        font-weight: 600;
+      }
+
       .form-container form input,
       .form-container form select,
       .form-container form textarea {
@@ -57,6 +63,10 @@
         background-color: #c8385c;
       }
 
+      .form-container .conditional {
+        display: none;
+      }
+
       @media (max-width: 600px) {
         .form-container form {
           grid-template-columns: 1fr;
@@ -68,6 +78,17 @@
         }
       }
     </style>
+    <script>
+      function handleCleaningChange(value) {
+        const field = document.getElementById('last-cleaning');
+        field.style.display = value === 'Yes' ? 'block' : 'none';
+      }
+
+      function handlePetsChange(value) {
+        const field = document.getElementById('pets-amount');
+        field.style.display = value === 'Yes' ? 'block' : 'none';
+      }
+    </script>
   </head>
   <body>
     <!-- ! HEADER -->
@@ -92,35 +113,96 @@
     <section class="form-container">
       <h1>Request a Quote</h1>
       <form action="https://formsubmit.co/drisilva023@gmail.com" method="POST">
-        <input type="text" name="First Name" placeholder="First Name" required />
-        <input type="text" name="Last Name" placeholder="Last Name" required />
-        <input type="email" name="Email" placeholder="Email" required />
-        <input type="tel" name="Phone" placeholder="Phone Number" required />
 
-        <input type="text" name="Previous Cleaning Info" placeholder="Has this property had professional cleaning before? If yes, when?" />
+        <div>
+          <label>First Name</label>
+          <input type="text" name="First Name" required />
+        </div>
 
-        <select name="Type of Cleaning" required>
-          <option value="">Type of Cleaning</option>
-          <option value="Residential">Residential</option>
-          <option value="Commercial">Commercial</option>
-          <option value="Move In/Out">Move In/Move Out</option>
-          <option value="Post Construction">Post-Construction</option>
-          <option value="Other">Other</option>
-        </select>
+        <div>
+          <label>Last Name</label>
+          <input type="text" name="Last Name" required />
+        </div>
 
-        <input type="text" name="Subject" placeholder="Request a quote." />
-        
-        <select name="Do you have pets?" required>
-          <option value="">Do you have pets?</option>
-          <option value="Yes">Yes</option>
-          <option value="No">No</option>
-        </select>
+        <div>
+          <label>Email</label>
+          <input type="email" name="Email" required />
+        </div>
 
-        <input type="text" name="Square Footage" placeholder="Total Square Footage" />
-        <input type="text" name="Bedrooms" placeholder="# of Bedrooms" />
-        <input type="text" name="Bathrooms" placeholder="# of Bathrooms" />
+        <div>
+          <label>Phone</label>
+          <input type="tel" name="Phone" required />
+        </div>
 
-        <textarea name="Message" placeholder="Leave a message..."></textarea>
+        <div>
+          <label>Has this property had professional cleaning before?</label>
+          <select name="Cleaned Before?" onchange="handleCleaningChange(this.value)">
+            <option value="">Choose an option</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+
+        <div id="last-cleaning" class="conditional">
+          <label>When was the last cleaning done?</label>
+          <input type="text" name="Last Cleaning Date" placeholder="Ex: 3 months ago" />
+        </div>
+
+        <div>
+          <label>Type of Cleaning you are Interested In?</label>
+          <select name="Type of Cleaning" required>
+            <option value="">Choose an option</option>
+            <option value="Residential Cleaning">Residential Cleaning</option>
+            <option value="Commercial Cleaning">Commercial Cleaning</option>
+            <option value="Move In/ Move Out Cleaning">Move In/ Move Out Cleaning</option>
+            <option value="Construction / Renovation Clean Up">Construction / Renovation Clean Up</option>
+            <option value="Painting Services">Painting Services</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Subject</label>
+          <input type="text" name="Subject" placeholder="Request a quote." />
+        </div>
+
+        <div>
+          <label>Do you have pets?</label>
+          <select name="Do you have pets?" onchange="handlePetsChange(this.value)">
+            <option value="">Choose an option</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+
+        <div id="pets-amount" class="conditional">
+          <label>How many pets?</label>
+          <input type="number" name="Number of Pets" placeholder="Ex: 2" min="0" />
+        </div>
+
+        <div>
+          <label>Total Square Footage</label>
+          <input type="text" name="Total Square Footage" placeholder="Total Square Footage of your home" required />
+        </div>
+
+        <div>
+          <label># of Full Bathrooms</label>
+          <input type="text" name="Full Bathrooms" placeholder="# of Full Bathrooms" required />
+        </div>
+
+        <div>
+          <label># of Half Baths</label>
+          <input type="text" name="Half Baths" placeholder="# of Half Baths" required />
+        </div>
+
+        <div>
+          <label># of Bedrooms</label>
+          <input type="text" name="Bedrooms" placeholder="# of Bedrooms" required />
+        </div>
+
+        <div style="grid-column: span 2;">
+          <label>Leave us a message...</label>
+          <textarea name="Message"></textarea>
+        </div>
 
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_next" value="https://adrianadasilvahousecleaning.com/thank-you.html" />
@@ -130,5 +212,6 @@
     </section>
   </body>
 </html>
+
 
 
