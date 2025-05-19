@@ -156,14 +156,23 @@
             <option value="Commercial Cleaning">Commercial Cleaning</option>
             <option value="Move In/ Move Out Cleaning">Move In/ Move Out Cleaning</option>
             <option value="Construction / Renovation Clean Up">Construction / Renovation Clean Up</option>
-            <option value="Painting Services">Painting Services</option>
+            <option value="Painting Services">Airbnb Cleaning</option>
+            <option value="Painting Services">One time Cleaning</option>
+            <option value="Painting Services">Other</option>
           </select>
         </div>
 
-        <div>
-          <label>Subject</label>
-          <input type="text" name="Subject" placeholder="Request a quote." />
-        </div>
+        <div style="grid-column: span 2;">
+  <label style="font-weight: bold;">Cleaning Frequency *</label>
+  <div style="display: flex; flex-wrap: wrap; gap: 1rem; padding-top: 0.5rem;">
+    <label><input type="radio" name="Cleaning Frequency" value="One Time" required /> One Time</label>
+    <label><input type="radio" name="Cleaning Frequency" value="Weekly" /> Weekly</label>
+    <label><input type="radio" name="Cleaning Frequency" value="Bi-Weekly" /> Bi-Weekly</label>
+    <label><input type="radio" name="Cleaning Frequency" value="Monthly" /> Monthly</label>
+    <label><input type="radio" name="Cleaning Frequency" value="Not Sure" /> Not Sure</label>
+  </div>
+</div>
+
 
         <div>
           <label>Do you have pets?</label>
