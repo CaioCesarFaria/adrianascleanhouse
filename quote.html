@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Request a Quote</title>
     <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
     <style>
       .form-container {
         padding: 3rem 1rem;
@@ -26,7 +23,7 @@
       .form-container form {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 3rem;
+        gap: 1rem;
       }
 
       .form-container label {
@@ -35,9 +32,9 @@
         font-weight: 600;
       }
 
-      .form-container form input,
-      .form-container form select,
-      .form-container form textarea {
+      .form-container input,
+      .form-container select,
+      .form-container textarea {
         padding: 0.8rem;
         border-radius: 8px;
         border: 1px solid #ccc;
@@ -45,13 +42,11 @@
         width: 100%;
       }
 
-      .form-container form textarea {
-        grid-column: span 2;
+      .form-container textarea {
         min-height: 100px;
       }
 
-      .form-container form button {
-        grid-column: span 2;
+      .form-container button {
         background-color: var(--rosa-primario);
         color: white;
         padding: 1rem;
@@ -60,13 +55,15 @@
         font-size: 1rem;
         cursor: pointer;
         transition: background-color 0.3s ease;
+        animation: pulse 2s infinite ease-in-out;
+        width: 100%;
       }
 
-      .form-container form button:hover {
-        background-color: #c8385c;
+      .full-width {
+        grid-column: span 2;
       }
 
-      .form-container .conditional {
+      .conditional {
         display: none;
       }
 
@@ -75,21 +72,37 @@
           grid-template-columns: 1fr;
         }
 
-        .form-container form textarea,
-        .form-container form button {
-          grid-column: span 1;
+        .form-container .full-width {
+          grid-column: span 1 !important;
+        }
+
+        .form-container textarea,
+        .form-container button {
+          grid-column: span 1 !important;
+        }
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.08);
+        }
+        100% {
+          transform: scale(1);
         }
       }
     </style>
     <script>
       function handleCleaningChange(value) {
-        const field = document.getElementById("last-cleaning");
-        field.style.display = value === "Yes" ? "block" : "none";
+        const field = document.getElementById('last-cleaning');
+        field.style.display = value === 'Yes' ? 'block' : 'none';
       }
 
       function handlePetsChange(value) {
-        const field = document.getElementById("pets-amount");
-        field.style.display = value === "Yes" ? "block" : "none";
+        const field = document.getElementById('pets-amount');
+        field.style.display = value === 'Yes' ? 'block' : 'none';
       }
     </script>
   </head>
@@ -99,17 +112,11 @@
       <div class="container-header">
         <div class="header-item">
           <img src="assets/icon_instagra.svg" alt="Instagram" />
-          <a
-            href="https://www.instagram.com/adrianadasilva.cleaning"
-            target="_blank"
-            >@adrianadasilva.cleaning</a
-          >
+          <a href="https://www.instagram.com/adrianadasilva.cleaning" target="_blank">@adrianadasilva.cleaning</a>
         </div>
         <div class="header-item">
           <img src="assets/icon_email.svg" alt="Email" />
-          <a href="mailto:housecleaning44@hotmail.com"
-            >housecleaning44@hotmail.com</a
-          >
+          <a href="mailto:housecleaning44@hotmail.com">housecleaning44@hotmail.com</a>
         </div>
         <div class="header-item">
           <img src="assets/icon_phone.svg" alt="Phone" />
@@ -121,7 +128,8 @@
     <!-- ! FORMULÁRIO -->
     <section class="form-container">
       <h1>Request a Quote</h1>
-      <form action="https://formsubmit.co/drisilva023@gmail.com" method="POST">
+      <form action="https://formsubmit.co/housecleaning44@hotmail.com" method="POST">
+        
         <div>
           <label>First Name</label>
           <input type="text" name="First Name" required />
@@ -144,10 +152,7 @@
 
         <div>
           <label>Has this property had professional cleaning before?</label>
-          <select
-            name="Cleaned Before?"
-            onchange="handleCleaningChange(this.value)"
-          >
+          <select name="Cleaned Before?" onchange="handleCleaningChange(this.value)">
             <option value="">Choose an option</option>
             <option value="Yes">Yes</option>
             <option value="No">No</option>
@@ -156,11 +161,7 @@
 
         <div id="last-cleaning" class="conditional">
           <label>When was the last cleaning done?</label>
-          <input
-            type="text"
-            name="Last Cleaning Date"
-            placeholder="Ex: 3 months ago"
-          />
+          <input type="text" name="Last Cleaning Date" placeholder="Ex: 3 months ago" />
         </div>
 
         <div>
@@ -169,87 +170,26 @@
             <option value="">Choose an option</option>
             <option value="Residential Cleaning">Residential Cleaning</option>
             <option value="Commercial Cleaning">Commercial Cleaning</option>
-            <option value="Move In/ Move Out Cleaning">
-              Move In/ Move Out Cleaning
-            </option>
-            <option value="Construction / Renovation Clean Up">
-              Construction / Renovation Clean Up
-            </option>
-            <option value="Painting Services">Airbnb Cleaning</option>
-            <option value="Painting Services">One time Cleaning</option>
-            <option value="Painting Services">Other</option>
+            <option value="Move In/ Move Out Cleaning">Move In/ Move Out Cleaning</option>
+            <option value="Construction / Renovation Clean Up">Construction / Renovation Clean Up</option>
+            <option value="Painting Services">Painting Services</option>
           </select>
         </div>
 
-        <div style="grid-column: span 2">
-          <label style="font-weight: bold">Cleaning Frequency *</label>
-          <div
-            style="
-              display: flex;
-              flex-wrap: wrap;
-              gap: 1rem;
-              padding-top: 0.5rem;
-            "
-          >
-            <label
-              ><input
-                type="radio"
-                name="Cleaning Frequency"
-                value="One Time"
-                required
-              />
-              One Time</label
-            >
-            <label
-              ><input type="radio" name="Cleaning Frequency" value="Weekly" />
-              Weekly</label
-            >
-            <label
-              ><input
-                type="radio"
-                name="Cleaning Frequency"
-                value="Bi-Weekly"
-              />
-              Bi-Weekly</label
-            >
-            <label
-              ><input type="radio" name="Cleaning Frequency" value="Monthly" />
-              Monthly</label
-            >
-            <label
-              ><input type="radio" name="Cleaning Frequency" value="Not Sure" />
-              Not Sure</label
-            >
+        <div class="full-width">
+          <label>Cleaning Frequency *</label>
+          <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+            <label><input type="radio" name="Cleaning Frequency" value="One Time" required /> One Time</label>
+            <label><input type="radio" name="Cleaning Frequency" value="Weekly" /> Weekly</label>
+            <label><input type="radio" name="Cleaning Frequency" value="Bi-Weekly" /> Bi-Weekly</label>
+            <label><input type="radio" name="Cleaning Frequency" value="Monthly" /> Monthly</label>
+            <label><input type="radio" name="Cleaning Frequency" value="Not Sure" /> Not Sure</label>
           </div>
-        </div>
-        <div style="grid-column: span 2">
-          <label>Where your place is located?</label>
-          <input
-            type="text"
-            name="Location"
-            placeholder="Ex: Richmond, VA or Full Address"
-            required
-          />
-        </div>
-
-        <div style="grid-column: span 2">
-          <label
-            >Do you like to request a personal free no obligation
-            consultation?</label
-          >
-          <select name="Request Free Consultation?" required>
-            <option value="">Choose an option</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-          </select>
         </div>
 
         <div>
           <label>Do you have pets?</label>
-          <select
-            name="Do you have pets?"
-            onchange="handlePetsChange(this.value)"
-          >
+          <select name="Do you have pets?" onchange="handlePetsChange(this.value)">
             <option value="">Choose an option</option>
             <option value="Yes">Yes</option>
             <option value="No">No</option>
@@ -258,68 +198,56 @@
 
         <div id="pets-amount" class="conditional">
           <label>How many pets?</label>
-          <input
-            type="number"
-            name="Number of Pets"
-            placeholder="Ex: 2"
-            min="0"
-          />
+          <input type="number" name="Number of Pets" placeholder="Ex: 2" min="0" />
+        </div>
+
+        <div class="full-width">
+          <label>Where your place is located?</label>
+          <input type="text" name="Location" placeholder="Ex: Richmond, VA or Full Address" required />
+        </div>
+
+        <div class="full-width">
+          <label>Do you like to request a personal free no obligation consultation?</label>
+          <select name="Request Free Consultation?" required>
+            <option value="">Choose an option</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
         </div>
 
         <div>
           <label>Total Square Footage</label>
-          <input
-            type="text"
-            name="Total Square Footage"
-            placeholder="Total Square Footage of your home"
-            required
-          />
+          <input type="text" name="Total Square Footage" placeholder="Total Square Footage of your home" required />
         </div>
 
         <div>
-          <label># of Full Bathrooms</label>
-          <input
-            type="text"
-            name="Full Bathrooms"
-            placeholder="# of Full Bathrooms"
-            required
-          />
+          <label>N° of Full Bathrooms</label>
+          <input type="text" name="Full Bathrooms" placeholder="N° of Full Bathrooms" required />
         </div>
 
         <div>
-          <label># of Half Baths</label>
-          <input
-            type="text"
-            name="Half Baths"
-            placeholder="# of Half Baths"
-            required
-          />
+          <label>N° of Half Baths</label>
+          <input type="text" name="Half Baths" placeholder="N° of Half Baths" required />
         </div>
 
         <div>
-          <label># of Bedrooms</label>
-          <input
-            type="text"
-            name="Bedrooms"
-            placeholder="# of Bedrooms"
-            required
-          />
+          <label>N° of Bedrooms</label>
+          <input type="text" name="Bedrooms" placeholder="N° of Bedrooms" required />
         </div>
 
-        <div style="grid-column: span 2">
+        <div class="full-width">
           <label>Leave us a message...</label>
           <textarea name="Message"></textarea>
         </div>
 
         <input type="hidden" name="_captcha" value="false" />
-        <input
-          type="hidden"
-          name="_next"
-          value="https://adrianadasilvahousecleaning.com/thank-you.html"
-        />
+        <input type="hidden" name="_next" value="https://adrianadasilvahousecleaning.com/thank-you.html" />
 
-        <button type="submit">Send Request</button>
+        <div class="full-width">
+          <button type="submit">Send Request</button>
+        </div>
       </form>
     </section>
   </body>
 </html>
+
