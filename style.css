@@ -112,7 +112,20 @@
     font-size: 1.2rem;
     text-decoration: none;
     transition: background-color 0.3s ease;
+  animation: pulse 2s infinite ease-in-out;
   }
+  @keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
   
   .btn-quote:hover {
     background-color: #c8385c;
@@ -607,7 +620,19 @@
     font-size: 1rem;
     text-decoration: none;
     transition: background-color 0.3s ease;
+  animation: pulse 2s infinite ease-in-out;
   }
+  @keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
   
   .btn-quote:hover {
     background-color: #c8385c;
@@ -1100,7 +1125,19 @@
       font-size: 2rem;
       text-decoration: none;
       transition: background-color 0.3s ease;
-    }
+  animation: pulse 2s infinite ease-in-out;
+  }
+  @keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
     
     .btn-quote:hover {
       background-color: #c8385c;
