@@ -201,9 +201,23 @@
           <input type="number" name="Number of Pets" placeholder="Ex: 2" min="0" />
         </div>
 
+        <div>
+          <label>Your place is a single house?</label>
+          <select name="Is Single House?" required>
+            <option value="">Choose an option</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+
+        <div>
+          <label>What city are you located?</label>
+          <input type="text" name="City" placeholder="Ex: San Francisco" required />
+        </div>
+
         <div class="full-width">
           <label>Where your place is located?</label>
-          <input type="text" name="Location" placeholder="Ex: Richmond, VA or Full Address" required />
+          <input type="text" name="Location" placeholder="Ex: Full Address or Neighborhood" required />
         </div>
 
         <div class="full-width">
@@ -250,4 +264,3 @@
     </section>
   </body>
 </html>
-
