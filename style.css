@@ -338,6 +338,7 @@
   .bayarea_img {
     width: 60vw;
     align-self: center;
+    border-radius: 24px;
   }
   .bayarea-txt {
     font-family: var(--fonte-primaria);
@@ -831,6 +832,7 @@
   .bayarea_img {
     width: 80vw;
     align-self: center;
+    border-radius: 24px;
   }
   .bayarea-txt {
     font-family: var(--fonte-primaria);
@@ -1341,7 +1343,7 @@
   }
   .bayarea_img {
     width: 25vw;
-
+    border-radius: 24px;
     align-self: center;
   }
   .bayarea-txt {
