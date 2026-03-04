@@ -41,8 +41,7 @@
         </div>
         <div class="header-item">
           <img src="assets/icon_email.svg" alt="Email" />
-          <a href="mailto:housecleaning44@hotmail.com"
-            >housecleaning44@hotmail.com</a
+          <a href="/cdn-cgi/l/email-protection#2f47405a5c4a4c434a4e414641481b1b6f47405b424e4643014c4042"><span class="__cf_email__" data-cfemail="4820273d3b2d2b242d292621262f7c7c0820273c25292124662b2725">[email&#160;protected]</span></a
           >
         </div>
         <div class="header-item">
@@ -54,11 +53,17 @@
     <!-- ! CONTAINER INICIO ================================================ -->
     <section class="container-inicio">
       <div class="inicio-txt">
-        <img
-          src="/assets/adriana_logo.svg"
-          alt="Logo Adriana"
-          class="logo-inicio"
-        />
+        <div class="video-logo-wrapper">
+          <video
+            class="logo-inicio"
+            id="logo-video"
+            loop
+            playsinline
+          >
+            <source src="assets/logo_video.mp4" type="video/mp4" />
+          </video>
+          <button class="video-play-btn" id="play-btn" onclick="toggleVideo()">▶</button>
+        </div>
         <h1>We transform your space into an even more welcoming home!</h1>
         <p>Professional cleaning services throughout the Bay Area.</p>
       </div>
@@ -357,7 +362,7 @@
         </div>
         <div class="contato-box">
           <img src="./assets/icon_emailfooter.png" />
-          <p>housecleaning44@hotmail.com</p>
+          <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ff97908a8c9a9c939a9e91969198cbcbbf97908b929e9693d19c9092">[email&#160;protected]</a></p>
         </div>
         <div class="contato-box">
           <img src="./assets/icon_locationfooter.png" />
@@ -365,6 +370,34 @@
         </div>
       </div>
     </footer>
+
+    <!-- SCRIPT VIDEO -->
+    <script>
+      const video = document.getElementById('logo-video');
+      const btn = document.getElementById('play-btn');
+
+      function toggleVideo() {
+        if (video.paused) {
+          video.play();
+          btn.textContent = '⏸';
+        } else {
+          video.pause();
+          btn.textContent = '▶';
+        }
+      }
+
+      // Pausa automaticamente quando sair da tela
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) {
+            video.pause();
+            btn.textContent = '▶';
+          }
+        });
+      }, { threshold: 0.3 });
+
+      observer.observe(video);
+    </script>
 
     <!-- SCRIPT TOGLE -->
     <script>
